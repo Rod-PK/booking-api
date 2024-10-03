@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 import { bookingRouter } from "./routes/all-routes.js";
 
 // Connect to database
@@ -10,6 +11,7 @@ const app = express();
 
 // Create middlewares
 app.use(express.json())
+app.use(cors())
 
 // Define routes
 // app.get("/booking", function (req, res, next) {

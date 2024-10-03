@@ -15,7 +15,7 @@ export const postBooking = async (req, res, next) => {
         await BookingModel.create(req.body)
 
 
-        res.status(201).json("Booking successful");
+        res.status(201).json(BookingModel);
     } catch (error) {
         next(error)
 
