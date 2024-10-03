@@ -1,8 +1,10 @@
 import { BookingModel } from "../models/booking-model.js";
 
 
-export const getAllBookings = (req, res, next) => {
-    res.status(200).json("These are all bookings");
+export const getAllBookings = async (req, res, next) => {
+    const booking = await BookingModel.find();
+
+    res.status(200).json(booking);
 }
 
 export const getOneBooking = (req, res, next) => {
@@ -12,10 +14,10 @@ export const getOneBooking = (req, res, next) => {
 export const postBooking = async (req, res, next) => {
 
     try {
-        await BookingModel.create(req.body)
+        await BookingModel.create(req.body);
 
 
-        res.status(201).json(BookingModel);
+        res.status(201).json("Booking successful");
     } catch (error) {
         next(error)
 
