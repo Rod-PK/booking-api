@@ -22,7 +22,7 @@ const bookingSchema = new Schema({
 
     seatNumber : {
         type: Number,
-        unique: true,
+        // unique: true,
         // required: true
     },
 
@@ -35,4 +35,4 @@ const bookingSchema = new Schema({
 })
 
 
-export const booking = model("Booking", bookingSchema)
+export const BookingModel = model("Booking", bookingSchema)
